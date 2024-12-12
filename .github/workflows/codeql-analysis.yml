@@ -5,17 +5,17 @@ on:
     branches:
       - main
   pull_request:
-    # Monitor pull requests to these branches
     branches:
       - main
-  schedule:
-    # Run weekly
-    - cron: '0 0 * * 0'
 
 jobs:
   analyze:
     name: Analyze Code
     runs-on: ubuntu-latest
+
+    permissions: 
+      contents: read
+      security-events: write
 
     steps:
     - name: Checkout code
